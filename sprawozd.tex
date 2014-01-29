@@ -23,8 +23,26 @@
 
 
 
-\section{Cel projektu}
+\section{Metody agregacji danych dotycz¹cych wspó³czynników cepstralnych.}
 
+W celu agregacji danych pochodz¹cych z ró¿nych okien zastosowano kilka miar. By³y to takie podstawowe miary jak: wartoœæ minimalna, wartoœæ maksymalna, wariancja oraz œrednia arytmetyczna. Ich znaczenie jest oczywiste, dlatego w dalszej czêœci zawarto opis trzech mniej popularnych ocen sygna³u. Dwie pierwsze metody wykorzystuj¹ Dyskretn¹ transformatê Fouriera sygna³u, oznaczan¹ liter¹ F.  
+
+\subsection{Spectral Flatness Measure}
+Miara ta opisuje jak bardzo analizowany sygna³ zbli¿ony jest do szumu bia³ego. Je¿eli wartoœæ wspó³czynnika jest du¿a, oznacza to, ¿e wartoœæ analizowanego sygna³u (w tym przypadku wartoœæ wspó³czynnika cepstralnego)
+nie zmienia siê lub, ¿e zmienia siê w sposób nieregularny. Ma³a wartoœæ miary mówi o tym, ¿e zmiany wartoœci wspó³czynników cepstralnych mog³yby zostaæ opisane za pomoc¹ kilku sinusoid. 
+	\begin{equation}
+   sfm = \frac{e^{\overline{ln(F)}}}{\overline{F}}  
+   \end{equation} 
+
+
+\subsection{The most significant  frequency}
+Miara ta zawiera informacje o czêstotliwoœci sinusoidy, która ma najwiêkszy wp³yw na kszta³t funkcji wykreœlanej przez zmianê wspó³czynnika cepstralnego w czasie. 
+\begin{equation}
+    f_{max}= argmax(F)  
+\end{equation} 
+
+\subsection{Maksymalna korelacja sygna³u z w³asnym przesuniêciem. }
+Ostatnia zastosowana miara, okreœla maksymaln¹ korelacjê sygna³u (Kolejnych wartoœci wspó³czynnika cepstralnego), z w³asnym przesuniêciem.  
 
 
 
