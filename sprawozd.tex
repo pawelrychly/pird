@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{graphicx,color} %include pdf's (and png's for raster graphics... avoid raster graphics!) 
 \usepackage{url} 
+\usepackage{subfigure}
 \usepackage{listings}
 \usepackage[pdftex,hyperfootnotes=false,pdfborder={0 0 0}]{hyperref} %za wszystkimi pakietami; pdfborder nie wszedzie tak samo zaimplementowane bo specyfikacja nieprecyzyjna; pod miktex'em po prostu nie widac wtedy ramek
 
@@ -21,6 +22,77 @@
 
 \input{_tytulowa}
 
+
+\section{Analiza zmian wartoœci wspó³czynników cepstralnych w czasie.}
+W celu dobrania najbardziej odpowiednich metod agregacji danych opisuj¹cych poszczególne próbki dŸwiêku, wygenerowano zbiór wykresów prezentuj¹cych zmiany wartoœci wspó³czynników cepstralnych w kolejnych próbkach.
+
+\begin{figure}[H]
+\centering
+\subfigure[blues]{%
+  \includegraphics[width=.45\linewidth]{pics/all/blues.png}
+\label{fig:subfigure1}
+}
+\quad
+\subfigure[classical]{%
+  \includegraphics[width=.45\linewidth]{pics/all/classical.png}
+\label{fig:subfigure1}
+}
+\quad
+\subfigure[country]{%
+  \includegraphics[width=.45\linewidth]{pics/all/country.png}
+\label{fig:subfigure2}
+}
+\quad
+\subfigure[disco]{%
+  \includegraphics[width=.45\linewidth]{pics/all/disco.png}
+\label{fig:subfigure2}
+}
+\quad
+\subfigure[hiphop]{%
+  \includegraphics[width=.45\linewidth]{pics/all/hiphop.png}
+\label{fig:subfigure2}
+}
+\quad
+\subfigure[jazz]{%
+  \includegraphics[width=.45\linewidth]{pics/all/jazz.png}
+\label{fig:subfigure2}
+}
+\quad
+
+%
+
+\caption{Porównanie zmian wartoœci wspó³czynników cepstralnych dla przyk³adowych plików reprezentuj¹cych ró¿ne gatunki muzyczne. }
+\label{fig:standarderror}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+
+\subfigure[metal]{%
+  \includegraphics[width=.45\linewidth]{pics/all/metal.png}
+\label{fig:subfigure2}
+}
+\quad
+\subfigure[pop]{%
+  \includegraphics[width=.45\linewidth]{pics/all/pop.png}
+\label{fig:subfigure2}
+}
+\quad
+\subfigure[reggae]{%
+  \includegraphics[width=.45\linewidth]{pics/all/reggae.png}
+\label{fig:subfigure2}
+}
+\quad
+\subfigure[rock]{%
+  \includegraphics[width=.45\linewidth]{pics/all/rock.png}
+\label{fig:subfigure2}
+}
+\quad
+%
+
+\caption{Porównanie zmian wartoœci wspó³czynników cepstralnych dla przyk³adowych plików reprezentuj¹cych ró¿ne gatunki muzyczne. }
+\label{fig:standarderror}
+\end{figure} 
 
 
 \section{Metody agregacji danych dotycz¹cych wspó³czynników cepstralnych.}
