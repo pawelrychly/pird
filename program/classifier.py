@@ -21,6 +21,8 @@ for i in range(13):
 for i in range(13):
     out.write("@attribute max_f"  + str(i) + " numeric\n")
 for i in range(13):
+    out.write("@attribute argmax_f" + str(i) + " numeric\n")
+for i in range(13):
     out.write("@attribute sfm"  + str(i) + " numeric\n")
 
 out.write("@attribute dec {classical,hiphop,reggae,country,jazz,metal,disco,pop,rock,blues}\n")
@@ -54,7 +56,7 @@ with open('y.yaml', 'r') as f:
     max_f_auto = doc["lowlevel"]["mfcc"]["max_f_auto"][0]
     max_f = doc["lowlevel"]["mfcc"]["max_f"][0]
     sfm = doc["lowlevel"]["mfcc"]["sfm"][0]
-
+    argmax = doc["lowlevel"]["mfcc"]["argmaxf_auto"]
     #print max_f_auto
     #print max_f
     #print sfm
@@ -76,8 +78,11 @@ with open('y.yaml', 'r') as f:
         out.write(str(i) + ",")
     for i in max_f:
         out.write(str(i) + ",")
+    for i in argmax:
+        out.write(str(i) + ",")
     for i in sfm:
         out.write(str(i) + ",")
+
 
     out.write(cat + "\n")
     os.system('rm y.yaml')

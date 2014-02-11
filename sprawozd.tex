@@ -28,16 +28,16 @@
 
 Problem klasyfikacji gatunku muzyki mo¿na sprowadziæ do problemu uczenia maszynowego na odpowiednio przetworzonych danych bêd¹cych próbkami dŸwiêkowymi okreœlonej d³ugoœci. Przetworzenie w tym przypadku polega na takiej transformacji utworów do pewnej przestrzeni wspó³czynników, ¿e mo¿liwe jest trafne klasyfikowanie nowo przyby³ych obiektów w oparciu o zgromadzon¹ wiedzê. W naszym projekcie jako Ÿród³a danych u¿yliœmy paczki ze strony Marsyas ( GTZAN genre collection ). Zbiór ten to ponad 1GB danych, podzielonych na 1000 plików, po 30 sekund ka¿dy. Pliki te zaklasyfikowane s¹ do 10 kategorii: Muzyka klasyczna, Blues, HipHop, Rock, Metal, Disco, Pop, Country, Jazz, Reggae - i dziel¹ zbiór danych na równe segmenty po 100 na ka¿d¹ kategoriê.
 
-Zalet¹ korzystania z tego zbioru danych jest relatywnie wysoka d³ugoœæ próbek ( 30 sekund ) oraz to, ¿e istniej¹ publikacje analizuj¹ce te dane. Dziêki temu mo¿emy odwo³aæ siê do wyników innych osób. Przyk³adem mo¿e byæ praca: "Musical Genre Classification of Audio Signals" napisana przez G. Tzanetakisa i P. Cooka. Jej autorom uda³o siê osi¹gn¹æ precyzjê oraz pokrycie na œrednim poziomie ok 60%. (http://dspace.library.uvic.ca:8080/bitstream/handle/1828/1344/tsap02gtzan.pdf?sequence=1) - pod tym adresem znaleŸæ mo¿na pracê, gdzie analizuj¹cym uda³o siê uzyskaæ precyzjê oraz pokrycie na œrednim poziomie ok 60% i taki te¿ jest nasz cel. 
-
 Jako biblioteki pomocniczej u¿yjemy w tym przypadku projektu Essentia przygotowanego przez Uniwersytet Pompeu-Fabra w Barcelonie do celów ekstrakcji danych oraz pakietu WEKA pomocnej przy klasyfikacji. 
+
+
+Zalet¹ korzystania z tego zbioru danych jest relatywnie wysoka d³ugoœæ próbek ( 30 sekund ) oraz to, ¿e istniej¹ publikacje analizuj¹ce t¹ paczkê, przez co mo¿emy odwo³aæ siê do wyników innych osób.
+
+ http://dspace.library.uvic.ca:8080/bitstream/handle/1828/1344/tsap02gtzan.pdf?sequence=1 - pod tym adresem znaleŸæ mo¿na pracê, gdzie analizuj¹cym uda³o siê uzyskaæ precyzjê oraz pokrycie na œrednim poziomie ok 60% i taki te¿ jest nasz cel. 
 
 \section{Przygotowanie danych}
 
-Wszystkie pliki muzyczne zakodowane s¹ w formacie Au zaproponowanym przez firmê Sun. Biblioteka Essentia umo¿liwia nam wyci¹gniêcie informacji o poszczególnych próbkach z takiego pliku bez zag³êbiania siê w strukturê formatu co jest bardzo du¿ym u³atwieniem. Maj¹c wczytany plik muzyczny nale¿y wybraæ pewien wektor cech, które mo¿liwie dobrze bêd¹ reprezentowaæ nasz problem i bêd¹ u¿yteczne z punktu widzenia klasyfikacji. 
-
-W projekcie zdecydowano siê na zbadanie jakoœci klasyfikacji w oparciu o wspó³czynniki melowe (MFCC). Cechy te opieraj¹ siê na charakterystyce s³yszenia ludzkiego ucha i s¹ bardzo czêsto wykorzystywane w problemach rozpoznawania mówców oraz klasyfikacji gatunków muzycznych. Wspó³czynniki melowe obliczane by³y dla bardzo krótkich fragmentów czasu. Z tego powodu ka¿dy analizowany plik dŸwiêkowy opisany zosta³ za pomoc¹ kilku sekwencji liczb, odpowiadaj¹cych wartoœci¹ poszczególnych wspó³czynników cepstralnych w kolejnych momentach czasu.
-W zwi¹zku z tym, g³ównym problemem na jaki natrafiliœmy by³ sposób agregacji tych danych. 
+Wszystkie pliki muzyczne zakodowane s¹ w formacie Au zaproponowanym przez firmê Sun. Biblioteka Essentia umo¿liwia nam wyci¹gniêcie informacji o poszczególnych próbkach z takiego pliku bez zag³êbiania siê w strukturê formatu co jest bardzo du¿ym u³atwieniem. Maj¹c wczytany plik muzyczny nale¿y wybraæ pewien wektor cech, które mo¿liwie dobrze bêd¹ reprezentowaæ nasz problem i bêd¹ u¿yteczne z punktu widzenia klasyfikacji. Okazuje siê, ¿e bardzo dobrym punktem wyjœcia do problemu s¹ wspó³czynniki melowe ( MFCC )
 
 
 \section{Analiza zmian wartoœci wspó³czynników cepstralnych w czasie.}
