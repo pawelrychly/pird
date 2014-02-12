@@ -47,7 +47,7 @@ for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512):
 mfccs = essentia.array(mfccs).T
 values_in_time = [mfccs[i,0:] for i in range(0, len(mfccs[:,1]))]
 print len(values_in_time)
-results = {"max_f_auto": [], "max_f": [], "sfm":[]}
+results = {"max_f_auto": [], "max_f": [], "sfm":[], "argmaxf_auto": []}
 
 aggrPool = PoolAggregator(defaultStats = [ "mean", "var", "min", "max" ])(pool)
 for i in range(len(values_in_time)):
