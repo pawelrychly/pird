@@ -49,7 +49,7 @@ for root, dirs, files in os.walk(dataset_path):
         counter += 1
         if counter <= 512:
             continue
-        
+
         cat =  root[root.rfind("/")+1:]
 #        if cat == "metal" or cat == "jazz" or cat == "country" or cat == "classical" or cat == "reggae" or cat == "hiphop" or cat == "disco" or cat == "rock" or cat == "pop":
 #            continue
