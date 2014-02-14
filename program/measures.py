@@ -113,7 +113,7 @@ def max_f_auto(values):
         x_v = values[0:len(values)-i]
         y_v = values[i:len(values)]
         if all([ y == y_v[0] for y in y_v]):
-            return numpy.nan
+            return (numpy.nan, numpy.nan)
         auto_corr[i] = numpy.corrcoef([x_v,y_v])[0][1]
             #auto_corr[i] = corrcoef(speed[0:len(speed)-i], speed[i:len(speed)])[0][1]
     lower_bound = 0
@@ -123,4 +123,5 @@ def max_f_auto(values):
             break
     max_sig_auto_corr = max(auto_corr[lower_bound: auto_corr_size])
     argmax_sig_auto_corr = numpy.argmax(auto_corr[lower_bound: auto_corr_size])
+
     return (argmax_sig_auto_corr, max_sig_auto_corr)

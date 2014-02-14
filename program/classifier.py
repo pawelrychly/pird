@@ -4,8 +4,8 @@ from subprocess import Popen, PIPE
 import sys
 import time
 
-mfcc_extractor_path = '/home/dawid/git/pird2/pird/program/standard_mfcc-extended_tempo.py'
-dataset_path = "/home/dawid/Pobrane/genres/"
+mfcc_extractor_path = '/home/pawel/PycharmProjects/pird/program/standard_mfcc-extended_tempo.py'
+dataset_path = "/hdd/baza/"
 
 
 # -----------------------------------
@@ -33,7 +33,9 @@ for i in range(13):
 for i in range(13):
     out.write("@attribute sfm"  + str(i) + " numeric\n")
 
-out.write("@attribute dec {classical,hiphop,reggae,country,jazz,metal,disco,pop,rock,blues}\n")
+#out.write("@attribute dec {classical,hiphop,reggae,country,jazz,metal,disco,pop,rock,blues}\n")
+out.write("@attribute dec {alternative,funksoulrnb,rock,blues,jazz,electronic,pop,folkcountry,raphiphop}\n")
+
 
 out.write("@data\n")
 
@@ -47,12 +49,12 @@ for root, dirs, files in os.walk(dataset_path):
    for f in files:
         print counter
         counter += 1
-        if counter <= 512:
-            continue
-        
+        #if counter >= 1300:
+        #    continue
+
         cat =  root[root.rfind("/")+1:]
-#        if cat == "metal" or cat == "jazz" or cat == "country" or cat == "classical" or cat == "reggae" or cat == "hiphop" or cat == "disco" or cat == "rock" or cat == "pop":
-#            continue
+        #if cat == "electronic":
+        #    continue
         fpath = os.path.join(root, f)
         print fpath
         process = Popen(['python',mfcc_extractor_path, fpath, 'y.yaml'], stdout=PIPE)

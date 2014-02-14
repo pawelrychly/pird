@@ -18,11 +18,10 @@ def prepare_directory(save_pic_dir):
         os.makedirs(save_pic_dir)
 
 out_file = 'y.yaml'
-file_dir = '/home/dawid/Pobrane/genres/classical/classical.00000.au'
+file_dir = '/hdd/gtzan/genres/classical/classical.00080.au'
 if len(sys.argv) >= 3:
     file_dir = sys.argv[1]
     out_file = sys.argv[2]
-
 loader = essentia.standard.MonoLoader(filename = file_dir)
 audio = loader()
 w = Windowing(type = 'hann')
@@ -35,7 +34,7 @@ pool = essentia.Pool()
 mfccs = []
 i = 0
 pool = essentia.Pool()
-print "audio length {0}".format(len(audio))
+#print "audio length {0}".format(len(audio))
 for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512):
     i +=1
     mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
@@ -46,7 +45,7 @@ for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512):
 
 mfccs = essentia.array(mfccs).T
 values_in_time = [mfccs[i,0:] for i in range(0, len(mfccs[:,1]))]
-print len(values_in_time)
+#print len(values_in_time)
 results = {"max_f_auto": [], "max_f": [], "sfm":[], "argmaxf_auto": []}
 
 aggrPool = PoolAggregator(defaultStats = [ "mean", "var", "min", "max" ])(pool)
@@ -63,6 +62,7 @@ for i in range(len(values_in_time)):
     if argmaxf_auto == None:
         argmaxf_auto = 0
 
+    maxf_auto = float(maxf_auto)
     results["max_f_auto"].append(maxf_auto)
     results["argmaxf_auto"].append(argmaxf_auto)
     results["max_f"].append(maxf)
