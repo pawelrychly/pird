@@ -185,8 +185,45 @@ Zbiór testowy równy 10\% ca³ej przestrzeni, zrównowa¿one klasy.
 \label{fig-schemat4}
 \end{figure}
 
+
+\subsection{Dodanie atrybutów z wartoœciami przesuniêcia dla którego uzyskano maksymaln¹ korelacjê}
+Zbiór testowy równy 10\% ca³ej przestrzeni, zrównowa¿one klasy, Crossvalidacja.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{pics/weka/Z8_ALL_CROSS.png}
+\end{center}
+\caption{Podsumowanie klasyfikacji}
+\label{fig-schemat5}
+\end{figure}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{pics/weka/Z8_ALL_CROSS2.png}
+\end{center}
+\caption{Macierz pomy³ek}
+\label{fig-schemat6}
+\end{figure}
+
+
+
+\subsection{Usuniêcie z poprzedniego podpunktu miary f\_max}
+Zbiór testowy równy 10\% ca³ej przestrzeni, zrównowa¿one klasy, Crossvalidacja.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{pics/weka/Z8_WOFMAX_CROSS.png}
+\end{center}
+\caption{Podsumowanie klasyfikacji}
+\label{fig-schemat7}
+\end{figure}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{pics/weka/Z8_WOFMAX_CROSS2.png}
+\end{center}
+\caption{Macierz pomy³ek}
+\label{fig-schemat8}
+\end{figure}
+
 \section{Wnioski}
-Widzimy zatem, ¿e u¿ycie najprostszych metod jakimi s¹ wspó³czynniki cepstralne przynosi bardzo dobre rezultaty ( przebijaj¹ce nawet te, które uzyskali poprzednicy stosuj¹c GMMy ). Patrz¹c na zró¿nicowanie w jakiœci wykrywania klas mo¿na dostrzec, ¿e gatunki "gitarowe" takie jak Blues, Rock, Metal, Country s¹ czêsto mylone - pomys³em na jeszcze wiêksze polepszenie wyników mo¿e byæ ekstrakcja informacji o œredniej g³oœnoœci utworu [ metalowe piosenki powinny byæ g³oœniejsze ni¿ bluesowe ]. 
+Widzimy zatem, ¿e u¿ycie najprostszych metod jakimi s¹ wspó³czynniki cepstralne przynosi bardzo dobre rezultaty ( przebijaj¹ce nawet te, które uzyskali poprzednicy stosuj¹c GMMy ). Patrz¹c na zró¿nicowanie w jakiœci wykrywania klas mo¿na dostrzec, ¿e gatunki "gitarowe" takie jak Blues, Rock, Metal, Country s¹ czêsto mylone - pomys³em na jeszcze wiêksze polepszenie wyników mo¿e byæ ekstrakcja informacji o œredniej g³oœnoœci utworu [ metalowe piosenki powinny byæ g³oœniejsze ni¿ bluesowe ]. Próba dodania dodatkowej miary w postaci przesuniêcia dla którego otrzymaliœmy maksymalna korelacjê nie sprawdzi³a siê ( nie przynios³a ¿adnej istotnej poprawy ). Tak samo usuniêcie atrybutu f\_max równie¿ pogorszy³o wyniki. Wydaje siê zatem, ¿e pocz¹tkowe zrzuty z Weki s¹ najlepszymi rezultatami jakie mogliœmy osi¹gnaæ.
 
 
 
